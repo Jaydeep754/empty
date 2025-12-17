@@ -166,6 +166,45 @@
                 font-size: 30px
             }
         }
+
+        /* =====================
+   EDUCATION SECTION
+===================== */
+        .education-container {
+            margin-top: 40px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .education-card {
+            background: var(--card);
+            padding: 25px;
+            border-radius: 14px;
+            transition: 0.4s ease;
+        }
+
+        .education-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .education-card h3 {
+            font-size: 20px;
+            margin-bottom: 8px;
+        }
+
+        .education-card span {
+            font-size: 14px;
+            color: var(--accent);
+            font-weight: 500;
+        }
+
+        .education-card p {
+            margin-top: 10px;
+            font-size: 15px;
+            color: #555;
+        }
     </style>
 </head>
 
@@ -187,6 +226,34 @@
             <p>Web Developer | Java | Frontend</p>
         </div>
     </header>
+    <!-- ===== EDUCATION ===== -->
+    <section id="education" class="reveal">
+        <h2>Education</h2>
+
+        <div class="education-container">
+
+            <div class="education-card">
+                <h3>Bachelor of Computer Applications (BCA)</h3>
+                <span>2022 – 2025</span>
+                <p>
+                    College: XYZ College, Gujarat <br>
+                    University: ABC University <br>
+                    Focus: Java, Web Development, DBMS, OOP
+                </p>
+            </div>
+
+            <div class="education-card">
+                <h3>Higher Secondary (12th)</h3>
+                <span>2021 – 2022</span>
+                <p>
+                    Board: GSEB <br>
+                    Stream: Commerce / Science
+                </p>
+            </div>
+
+        </div>
+    </section>
+
     <section id="about" class="reveal">
         <h2>About Me</h2>
         <p>I am a BCA student and aspiring software developer seeking internship opportunities.</p>
