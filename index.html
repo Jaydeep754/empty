@@ -2,16 +2,174 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jaydeep </title>
-    <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jaydeep Modi | Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #ffffff;
+            --text: #222;
+            --accent: #00e5ff;
+            --card: #f4f4f4;
+            --dark: #0f2027;
+        }
+
+        body.dark {
+            --bg: #0f2027;
+            --text: #f1f1f1;
+            --card: #203a43;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            transition: .4s
+        }
+
+        header {
+            min-height: 100vh;
+            background: linear-gradient(120deg, #0f2027, #203a43, #2c5364);
+            color: #fff
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(0, 0, 0, .6);
+            backdrop-filter: blur(8px);
+            z-index: 1000
+        }
+
+        nav ul {
+            display: flex;
+            gap: 20px;
+            list-style: none
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none
+        }
+
+        .toggle {
+            cursor: pointer;
+            border: 1px solid #fff;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 14px
+        }
+
+        .intro {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center
+        }
+
+        .intro img {
+            width: 170px;
+            height: 170px;
+            border-radius: 50%;
+            border: 4px solid var(--accent);
+            animation: float 3s infinite
+        }
+
+        section {
+            padding: 80px 10%
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 32px
+        }
+
+        h2::after {
+            content: '';
+            width: 60px;
+            height: 4px;
+            background: var(--accent);
+            display: block;
+            margin: 10px auto
+        }
+
+        .project-container {
+            margin-top: 40px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px
+        }
+
+        .project {
+            background: var(--card);
+            padding: 25px;
+            border-radius: 14px;
+            transition: .4s
+        }
+
+        .project:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, .2)
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #000;
+            color: #aaa
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: 1s
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: none
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: none
+            }
+
+            50% {
+                transform: translateY(-10px)
+            }
+        }
+
+        @media(max-width:768px) {
+            nav {
+                padding: 15px 20px
+            }
+
+            .intro h1 {
+                font-size: 30px
+            }
+        }
+    </style>
 </head>
 
 <body>
-
-    <!-- ===== HEADER ===== -->
     <header id="home">
         <nav>
             <div class="logo">Jaydeep</div>
@@ -21,53 +179,36 @@
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
+            <div class="toggle" onclick="toggleMode()">🌙 / ☀️</div>
         </nav>
-
         <div class="intro">
-            <img src="images/jaydeep1.jpg" alt="Your Photo">
-            <h1>Hello, I’m <span>Jaydeep Modi</span></h1>
-            <p>A Passionate Web Developer & Designer</p>
+            <img src="images/jaydeep1.jpg" />
+            <h1>Hello, I’m <span style="color:var(--accent)">Jaydeep Modi</span></h1>
+            <p>Web Developer | Java | Frontend</p>
         </div>
     </header>
-
-    <!-- ===== ABOUT ===== -->
-    <section id="about">
+    <section id="about" class="reveal">
         <h2>About Me</h2>
-        <p>I am a web developer who loves creating beautiful and user-friendly websites. I specialize in HTML, CSS,
-            JavaScript, and responsive design.</p>
+        <p>I am a BCA student and aspiring software developer seeking internship opportunities.</p>
     </section>
-
-    <!-- ===== PROJECTS ===== -->
-    <section id="projects">
-        <h2>My Projects</h2>
+    <section id="projects" class="reveal">
+        <h2>Projects</h2>
         <div class="project-container">
-
-            <div class="project">
-                <h3>Project Title 1</h3>
-                <p>Description of your first cool project.</p>
-                <a href="https://yourprojectlink1.com" target="_blank">View Live</a>
-            </div>
-
-            <div class="project">
-                <h3>Project Title 2</h3>
-                <p>Description of your second project.</p>
-                <a href="https://yourprojectlink2.com" target="_blank">View Live</a>
-            </div>
-
+            <div class="project">Portfolio Website</div>
+            <div class="project">Java Mini Projects</div>
         </div>
     </section>
-
-    <!-- ===== CONTACT ===== -->
-    <section id="contact">
-        <h2>Contact Me</h2>
-        <p>Email: <a href="gmail:modijaydeep2@gmail.com">modijaydeep2@gmail.com</a></p>
+    <section id="contact" class="reveal">
+        <h2>Contact</h2>
+        <p>Email: modijaydeep2@gmail.com</p>
         <p>Phone: 7984869312</p>
     </section>
-
-    <footer>
-        &copy; 2025 JaydeepModi. All Rights Reserved.
-    </footer>
-
+    <footer>© 2025 Jaydeep Modi</footer>
+    <script>
+        function toggleMode() { document.body.classList.toggle('dark') }
+        const reveals = document.querySelectorAll('.reveal');
+        window.addEventListener('scroll', () => { reveals.forEach(r => { const top = r.getBoundingClientRect().top; if (top < window.innerHeight - 100) r.classList.add('active') }) });
+    </script>
 </body>
 
 </html>
